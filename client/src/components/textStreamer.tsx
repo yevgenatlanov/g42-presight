@@ -20,7 +20,10 @@ const TextStreamer: React.FC = () => {
       abortControllerRef.current = new AbortController();
       const { signal } = abortControllerRef.current;
 
-      const response = await fetch("/api/stream/text", { signal });
+      const response = await fetch(
+        import.meta.env.VITE_API_URL + "/api/stream/text",
+        { signal }
+      );
 
       if (!response.ok || !response.body) {
         throw new Error(`HTTP error! Status: ${response.status}`);
