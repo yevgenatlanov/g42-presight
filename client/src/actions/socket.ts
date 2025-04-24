@@ -7,7 +7,7 @@ class SocketService {
   connect() {
     if (this.socket) return;
 
-    this.socket = io(process.env.REACT_APP_API_URL);
+    this.socket = io(import.meta.env.VITE_API_URL || "");
 
     this.socket.on("connect", () => {
       console.log("Connected to socket server");
