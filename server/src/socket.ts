@@ -6,7 +6,7 @@ let io: Server;
 export function setupSocketServer(server: http.Server) {
   io = new Server(server, {
     cors: {
-      origin: "*", // this is not for production for sure
+      origin: ["https://g42-presight-client.vercel.app/"], // this is not for production for sure
       methods: ["GET", "POST"],
     },
   });
