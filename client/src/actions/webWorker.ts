@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "/api/worker";
+const API_URL = process.env.REACT_APP_API_URL + "/api/worker";
 
 export interface WorkerRequest {
   data: any;
